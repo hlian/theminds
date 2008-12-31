@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{35B1496B-B1C3-416A-BC59-42BD2F9527B9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Theminds</RootNamespace>
+    <AssemblyName>Theminds</AssemblyName>
+    <StartupObject>Theminds.AppStart</StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <ApplicationRevision>0</ApplicationRevision>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\Theminds\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\bin\Theminds\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
+    <Compile Include="App.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppControls.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppStart.cs" />
+    <Compile Include="Assembly.cs" />
+    <Compile Include="Attributes.cs" />
+    <Compile Include="Buffer.cs" />
+    <Compile Include="Bufferlings.cs" />
+    <Compile Include="Filters\InputBoxFilters.cs" />
+    <Compile Include="Filters\JoinPartQuit.cs" />
+    <Compile Include="Filters\LogBoxFilters.cs" />
+    <Compile Include="Filters\Names.cs" />
+    <Compile Include="Filters\Privmsg.cs" />
+    <Compile Include="Filters\Query.cs" />
+    <Compile Include="Filters\Who.cs" />
+    <Compile Include="SetUpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TabsParent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tests\InputBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Tests\JoinPartQuit.cs" />
+    <Compile Include="Tests\MockApp.cs" />
+    <Compile Include="Filters\Users.cs" />
+    <Compile Include="Tests\Names.cs" />
+    <Compile Include="Tests\PrivmsgFilter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Plainclothes\lion.txt" />
+  </ItemGroup>
+  <PropertyGroup>
+    <PostBuildEvent>copy /Y "$(ProjectDir)Plainclothes\lion.txt" "$(TargetDir)"</PostBuildEvent>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bowel, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>GenBowel\Bowel.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ControlFreak\ControlFreak.csproj">
+      <Project>{0CB8F09D-E1A2-4695-BAFF-18E17151BE11}</Project>
+      <Name>ControlFreak</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Quirk\Quirk.csproj">
+      <Project>{38B595B3-1466-4D51-9EB2-CD2A095A6ACE}</Project>
+      <Name>Quirk</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Structures\Structures.csproj">
+      <Project>{33D6C14F-9C5C-4B5D-8D4C-0B1F75215A9E}</Project>
+      <Name>Structures</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tabs\Tabs.csproj">
+      <Project>{783532EE-FF4C-412A-A1CA-FF8B6A7F958F}</Project>
+      <Name>Tabs</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+</Project>

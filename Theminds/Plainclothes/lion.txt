@@ -1,0 +1,22 @@
+"join.others"	"--> {0} ({1}) has joined {2}"
+"join.self"		"--> You have joined {0}"
+
+"part.others"	"<-- {0} ({1}) has left {2}"
+"part.self"		"<-- You have left {0}"
+"part.reason"	" ({0})"
+"part.total"	"{0}{1}"
+
+"quit.others"	"<-- {0} ({1}) has quit"
+"quit.self"		"<-- You have quit"
+"quit.reason"	" ({0})"
+"quit.total"	"{0}{1}"
+
+"speech.all"	"<{0}> {1}"
+"action.all"	"* {0} {1}"
+
+"query.intro"		"{1}Welcome to a new conversation, a new world with {0}."
+"query.intro.nonce"	"[queryFilterConjunction]"
+
+"server.prefix"		"[server]"
+
+"error.cannot.privmsg" "The door will not open."
